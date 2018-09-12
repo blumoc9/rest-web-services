@@ -1,0 +1,8 @@
+/home/fcolnoz9/git/rest-web-services/src/main/java/com/fcolnoz/rest/webservices/restwebservices/controller/ExcelOutputServiceController.java
+/home/fcolnoz9/git/rest-web-services/src/main/java/com/fcolnoz/rest/webservices/restwebservices/serviceImpl/ExcelOutputServiceImpl.java
+/home/fcolnoz9/git/rest-web-services/src/main/java/com/fcolnoz/rest/webservices/restwebservices/service/ExcelOutputService.java
+/home/fcolnoz9/git/rest-web-services/src/main/java/com/fcolnoz/rest/webservices/restwebservices/model/Factura.java
+/home/fcolnoz9/git/rest-web-services/src/main/java/com/fcolnoz/rest/webservices/restwebservices/RestWebServicesApplication.java
+/home/fcolnoz9/git/rest-web-services/src/main/java/com/fcolnoz/rest/webservices/restwebservices/configuration/WebConfiguration.java
+/home/fcolnoz9/git/rest-web-services/src/main/java/com/fcolnoz/rest/webservices/restwebservices/model/ComprobanteConsultaRemanente.java
+/home/fcolnoz9/git/rest-web-services/src/main/java/com/fcolnoz/rest/webservices/restwebservices/model/ApiRequest.java

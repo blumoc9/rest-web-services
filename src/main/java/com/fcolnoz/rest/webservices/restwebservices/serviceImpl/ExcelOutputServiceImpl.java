@@ -1,10 +1,12 @@
 package com.fcolnoz.rest.webservices.restwebservices.serviceImpl;
 
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fcolnoz.rest.webservices.restwebservices.RestWebServicesApplication;
+import com.fcolnoz.rest.webservices.restwebservices.model.ComprobanteConsultaRemanente;
 import com.fcolnoz.rest.webservices.restwebservices.service.ExcelOutputService;
 
 import javax.servlet.http.HttpServletResponse;
@@ -13,9 +15,10 @@ import net.sf.jxls.transformer.Sheet;
 import net.sf.jxls.transformer.XLSTransformer;
 
 import org.apache.log4j.Logger;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.stereotype.Service;
 
-import jxl.Workbook;
+
 import jxl.write.Label;
 import jxl.write.WritableSheet;
 import jxl.write.WriteException;
@@ -35,7 +38,7 @@ public class ExcelOutputServiceImpl implements ExcelOutputService {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public org.apache.poi.ss.usermodel.Workbook createExcelOutputExcel(HttpServletResponse response,Object clazz) {
+	public org.apache.poi.ss.usermodel.Workbook createExcelOutputExcel(HttpServletResponse response,ComprobanteConsultaRemanente clazz) {
 		// TODO Auto-generated method stub
 		String fileName = "excelDocument.xls";
 		Workbook wb = null;
@@ -48,10 +51,10 @@ public class ExcelOutputServiceImpl implements ExcelOutputService {
 //		    // object -> Map
 		    Map<String, Object> templateParams = new HashMap<String,Object>();
 			Map<String, Object> map = oMapper.convertValue(clazz, Map.class);
-			
+			OutputStream out = response.getOutputStream();
 			XLSTransformer transformer = new XLSTransformer();	
-			wb = (Workbook) transformer.transformXLS(RestWebServicesApplication.class.getResourceAsStream("/xls/excel.xlsx"), templateParams);
-			
+			wb = (Workbook) transformer.transformXLS(RestWebServicesApplication.class.getResourceAsStream("/xls/comprobante-remanente.xls"), templateParams);
+			wb.write(out);
   
 			
 			
@@ -63,6 +66,16 @@ public class ExcelOutputServiceImpl implements ExcelOutputService {
 		
 		
 	//	return writableWorkbook;
+	}
+	
+	
+	public ComprobanteConsultaRemanente emulateData() {
+		
+		ComprobanteConsultaRemanente comprobanteConsultaRemanente = new ComprobanteConsultaRemanente();
+		
+		
+		return comprobanteConsultaRemanente;
+		
 	}
 	
 

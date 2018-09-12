@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.poi.ss.usermodel.Workbook;
 
+import com.fcolnoz.rest.webservices.restwebservices.model.ComprobanteConsultaRemanente;
+
 //import jxl.write.WritableWorkbook;
 
 /**
@@ -13,6 +15,6 @@ import org.apache.poi.ss.usermodel.Workbook;
  */
 public interface ExcelOutputService {
 	
-	public abstract Workbook createExcelOutputExcel(HttpServletResponse response,Object clazz);
+	public abstract Workbook createExcelOutputExcel(HttpServletResponse response,ComprobanteConsultaRemanente clazz);
 
 }
